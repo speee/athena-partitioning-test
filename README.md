@@ -10,7 +10,24 @@ irb(main):003:0> data.bulk_create(1000) # create 1000 partitions
 
 ## Result
 
-## Query
+#### scan 10,000 partitions at once
+- 7 minutes 59 seconds
+- 265 minutes 17 seconds => cancel
+- 263 minutes 41 seconds => cancel
+- 263 minutes 16 seconds => cancel
+- 262 minutes 53 seconds => cancel
+- 262 minutes 57 seconds => cancel
+- 75 minutes 9 seconds => cancel
+
+Although the queries had ran over 30 minutes, those didn't killed by Athena.<br>
+This behavior confused me, because [the document](http://docs.aws.amazon.com/athena/latest/ug/service-limits.html) said  `Query timeout: 30 minutes`.
+
+![image1](./image1.png)
+
+#### scan additional 1 partition after 10,000 partitions scaned
+- 43 minutes 12 seconds
+
+## Query for Athena
 
 ```sql
 CREATE EXTERNAL TABLE IF NOT EXISTS partitioning_test (
@@ -29,5 +46,5 @@ WITH SERDEPROPERTIES (
 ```
 
 ```sql
-MSCK REPAIR TABLE  partitioning_test;
+MSCK REPAIR TABLE partitioning_test;
 ```
