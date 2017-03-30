@@ -48,3 +48,6 @@ WITH SERDEPROPERTIES (
 ```sql
 MSCK REPAIR TABLE partitioning_test;
 ```
+
+## References
+- https://www.slideshare.net/tetsutarowatanabe/aws-athena-30tbweb/8
