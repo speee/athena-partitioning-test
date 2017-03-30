@@ -1,3 +1,13 @@
+## Create sample partition data
+
+```bash
+$ bundle install
+$ ./console.rb
+irb(main):001:0> data = SamplePartitionData.new('bucket_name')
+irb(main):002:0> data.create # create a partition
+irb(main):003:0> data.bulk_create(1000) # create 1000 partitions
+```
+
 ## Result
 
 ## Query

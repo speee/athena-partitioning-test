@@ -1,13 +1,12 @@
 #!/usr/bin/env ruby
 
 require 'aws-sdk'
-
-PARTITION_COUNTS = 10000.freeze
-BUCKET = 'bucket_name'.freeze
+require 'irb'
 
 class SamplePartitionData
-  def initialize
-    @partition = 1
+  def initialize(bucket, start_partition_id = 1)
+    @bucket = bucket
+    @partition_id = start_partition_id
   end
 
   def bulk_create(partition_counts)
@@ -19,14 +18,14 @@ class SamplePartitionData
   end
 
   def create
-    s3.put_object(bucket: BUCKET, key: key, body: body)
-    @partition += 1
+    s3.put_object(bucket: @bucket, key: key, body: body)
+    @partition_id += 1
   end
 
   private
 
   def key
-    "partition_id=#{@partition}/hogehoge.csv"
+    "partition_id=#{@partition_id}/hogehoge.csv"
   end
 
   def body
@@ -43,5 +42,4 @@ class SamplePartitionData
   end
 end
 
-data = SamplePartitionData.new
-data.bulk_create(PARTITION_COUNTS)
+IRB.start
