@@ -10,6 +10,10 @@ irb(main):003:0> data.bulk_create(1000) # create 1000 partitions
 
 ## Result
 
+2017/03/30<br>
+Athena: us-west-2<br>
+S3 bucket: ap-northeast-1
+
 #### scan 10,000 partitions at once
 - 7 minutes 59 seconds
 - 265 minutes 17 seconds => cancel
@@ -26,6 +30,7 @@ This behavior confused me, because [the document](http://docs.aws.amazon.com/ath
 
 #### scan additional 1 partition after 10,000 partitions scaned
 - 43 minutes 12 seconds
+- 46 minutes 1 seconds
 
 ## Query for Athena
 
