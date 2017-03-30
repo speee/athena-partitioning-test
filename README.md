@@ -56,3 +56,10 @@ MSCK REPAIR TABLE partitioning_test;
 
 ## References
 - https://www.slideshare.net/tetsutarowatanabe/aws-athena-30tbweb/8
+
+
+## License
+
+This is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+Copyright © [pataiji](https://github.com/pataiji) and Speee, Inc.
