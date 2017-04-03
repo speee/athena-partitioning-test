@@ -33,6 +33,7 @@ This behavior confused me, because [the document](http://docs.aws.amazon.com/ath
 - 46 minutes 1 seconds
 - 43 minutes 53 seconds
 - 44 minutes 15 seconds
+- 44 minutes 28 seconds
 
 ## Query for Athena
 
