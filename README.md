@@ -31,6 +31,8 @@ This behavior confused me, because [the document](http://docs.aws.amazon.com/ath
 #### scan additional 1 partition after 10,000 partitions scaned
 - 43 minutes 12 seconds
 - 46 minutes 1 seconds
+- 43 minutes 53 seconds
+- 44 minutes 15 seconds
 
 ## Query for Athena
 
